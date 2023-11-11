@@ -1,55 +1,4 @@
-<style>
-    .intro-section{
-        text-align: center;
-        color: white;    
-        padding: 20px;
-    }
-    .search-box{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .product-category{
-        width: 200px;
-    }
-    .search-input{
-        width: 300px;
-        background-color: rgb(19,23,42);
-        margin-right: 10px;
-        border-color: rgba(255,255,255,0.5);
-        color: white;
-    }
-    .form-control {
-        background-color: transparent;
-        color: white;
-    }
-    .form-control::placeholder { /*chorme*/
-        color: rgba(255,255,255,0.5);
-        opacity: 1;
-    }
-    .product-item {
-        background-color: white;
-        border: 1px solid white;
-        border-radius: 20px;
-        padding: 20px;
-        margin-top: 50px;
-    }
-    .product-image {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    } 
-    .produce-name {
-        text-transform: uppercase;
-        font-size: 25px;
-    }
-    .produce-description {
-        color:black;
-    }
-    .produce-price {
-        color: black;
-    }
-</style>
+<app-header></app-header>
 <div class="container">
     <div class="intro-section">
         <h1>Đây là trang home</h1>
@@ -75,15 +24,205 @@
                 class="product-image">
                 <h2 class="produce-name">Bỏng ngô</h2>
                 <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
-                <p class="produce-price">Giá: $200</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
                 <div class="produce-rating">
-                    <i class="fa-solid fa-star" style="color: #eac510;"></i>
-                    <i class="fa-solid fa-star" style="color: #eac510;"></i>
-                    <i class="fa-solid fa-star" style="color: #eac510;"></i>
-                    <i class="fa-solid fa-star" style="color: #eac510;"></i>
-                    <i class="fa-solid fa-star" style="color: #eac510;"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bánh mỳ</h2>
+                <p class="produce-description">Đặc biệt thơm ngon thượng hạng</p>
+                <p class="produce-price"><del>Giá: $200</del>  $150</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item">
+            <img   
+                src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=600"
+                alt="product-image"
+                class="product-image">
+                <h2 class="produce-name">Bỏng ngô</h2>
+                <p class="produce-description">Chất liệu lúa mạch Hà Lan</p>
+                <p class="produce-price"><del>Giá: $300</del>  $200</p>
+                <div class="produce-rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="product-actions">
+                    <button type="button" class="btn btn-danger">Thêm vào giỏ hàng</button>
+                    <span class="space-x"></span>
+                    <button type="button" class="btn btn-success">Mua ngay</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>
