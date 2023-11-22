@@ -1,6 +1,5 @@
 package com.project.shopapp.controllers;
 
-
 import com.project.shopapp.dtos.CategoryDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,7 @@ public class CategoryController {
         return ResponseEntity.ok(String.format("getAllCategories, page = %d, limit = %d", page, limit));
     }
     @PostMapping("")
-    public ResponseEntity<?> insertcategories(
+    public ResponseEntity<?> insertCategories(
             @Valid @RequestBody CategoryDTO categoryDTO,
             BindingResult result
             ) {
