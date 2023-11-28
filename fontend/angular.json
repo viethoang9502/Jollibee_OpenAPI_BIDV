@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Shopapp-angular": {
+    "shopapp-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,28 +29,36 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            "styles": [              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1000kb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "10kb"
                 }
-              ],
-              "outputHashing": "all"
+              ]              
             },
             "development": {
               "buildOptimizer": false,
@@ -67,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Shopapp-angular:build:production"
+              "browserTarget": "shopapp-angular:build:production"
             },
             "development": {
-              "browserTarget": "Shopapp-angular:build:development"
+              "browserTarget": "shopapp-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Shopapp-angular:build"
+            "browserTarget": "shopapp-angular:build"
           }
         },
         "test": {
@@ -95,9 +103,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           }
@@ -106,6 +113,6 @@
     }
   },
   "cli": {
-    "analytics": "7facfb5e-2445-4e5e-90cd-39b3c837ccc2"
+    "analytics": "12eead7c-ea1a-4218-9ebd-51ba7ffceaee"
   }
 }
