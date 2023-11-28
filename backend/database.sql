@@ -62,6 +62,17 @@ CREATE TABLE products (
     category_id INT,
     FOREIGN KEY (category_id) REFERENCES categories (id)
 );
+
+CREATE TABLE product_images(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id INT,
+    FOREIGN KEY (product_id) REFERENCES products (id),
+    CONSTRAINT fk_product_images_product_id 
+        FOREIGN KEY (product_id) 
+        REFERENCES products (id) ON DELETE CASCADE,
+    image_url VARCHAR(300)
+);
+
 --Đặt hàng - orders
 CREATE TABLE orders(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -99,4 +110,30 @@ CREATE TABLE order_details(
     number_of_products INT CHECK(number_of_products > 0),
     total_money FLOAT CHECK(total_money >= 0),
     color VARCHAR(20) DEFAULT ''
-); 
+);
+
+ALTER TABLE orders
+MODIFY COLUMN total_money FLOAT DEFAULT 0,
+MODIFY COLUMN shipping_method VARCHAR(100),
+MODIFY COLUMN tracking_number VARCHAR(100),
+MODIFY COLUMN payment_method VARCHAR(100),
+MODIFY COLUMN shipping_address VARCHAR(200) DEFAULT '',
+MODIFY COLUMN shipping_date DATE,
+MODIFY COLUMN active TINYINT(1) DEFAULT 1;
+
+UPDATE orders
+SET total_money = 0,
+    shipping_method = '',
+    tracking_number = '',
+    payment_method = '',
+    shipping_address = '',    
+    active = 1
+WHERE total_money IS NULL
+   OR shipping_method IS NULL
+   OR tracking_number IS NULL
+   OR payment_method IS NULL
+   OR shipping_address IS NULL
+   OR shipping_date IS NULL
+   OR active IS NULL;
+
+
