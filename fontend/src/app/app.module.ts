@@ -16,17 +16,11 @@ import { AppComponent } from './app/app.component';
 import { UserProfileComponent } from './components/user-profile/user.profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-//import { AdminComponent } from './components/admin/admin.component';
-//import { OrderAdminComponent } from './components/admin/order/order.admin.component';
-import { ProductAdminComponent } from './components/admin/product/product.admin.component';
-import { CategoryAdminComponent } from './components/admin/category/category.admin.component';
-//import { DetailOrderAdminComponent } from './components/admin/detail-order/detail.order.admin.component';
 import { AdminModule } from './components/admin/admin.module';
 import { 
   HttpClientModule, 
   HTTP_INTERCEPTORS 
 } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [    
@@ -39,7 +33,7 @@ import {
     LoginComponent, 
     RegisterComponent, 
     UserProfileComponent,
-    AppComponent,
+    AppComponent,    
     //admin    
     //AdminComponent,
     //OrderAdminComponent,

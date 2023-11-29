@@ -23,8 +23,11 @@ export class AdminComponent implements OnInit {
    }
   ngOnInit() {
     this.userResponse = this.userService.getUserResponseFromLocalStorage();    
-    //default router
-    this.router.navigate(['/admin/orders']);
+    // Default router
+    debugger
+    if (this.router.url === '/admin') {
+      this.router.navigate(['/admin/orders']);
+    }
    }  
   logout() {
     this.userService.removeUserFromLocalStorage();
@@ -33,17 +36,16 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/']);
   }
   showAdminComponent(componentName: string): void {
-    //this.adminComponent = componentName;orders,categories
-    if(componentName=='orders') {
+    if (componentName === 'orders') {
       this.router.navigate(['/admin/orders']);
-    } else if(componentName=='categories') {
+    } else if (componentName === 'categories') {
       this.router.navigate(['/admin/categories']);
-    }else if(componentName=='products') {
+    } else if (componentName === 'products') {
       this.router.navigate(['/admin/products']);
     }
-    
   }
 }
+
 
 /**
  npm install --save font-awesome
@@ -51,5 +53,4 @@ export class AdminComponent implements OnInit {
  "styles": [   
     "node_modules/font-awesome/css/font-awesome.min.css"
 ],
-
  */

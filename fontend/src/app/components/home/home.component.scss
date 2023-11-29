@@ -2,7 +2,7 @@
 
 .intro-section {
     text-align: center;
-    color: white;
+    color: yellow;
     padding: 20px;
 }
 
@@ -19,20 +19,21 @@
 
 .search-input {
     width: 300px;
-    background-color: $shopapp-background-color;
     margin-right: 10px;
     border-color: rgba(255, 255, 255, 0.5);
-    color: white;
-}
-
+    color: #333333; 
+    box-shadow: 0 0 0 5px rgba(212, 8, 8, 0.3);
+  }
+  
 .form-control {
-    background-color: transparent;
-    color: white;
+    background-color: #ffffff;
+    height: 50px;
+    color: rgb(10, 10, 10);
 }
 
 .form-control::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(17, 16, 16, 0.5);
     opacity: 1;
     /* Firefox */
 }
@@ -48,8 +49,8 @@
 }
 
 .product-item {
-    background-color: $shopapp-background-color;
-    border: 1px solid rgb(35, 39, 61);
+    background-color: #ffffff;
+    border: 1px solid rgb(238, 238, 235);
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
@@ -57,16 +58,22 @@
 
 .product-image {
     width: 100%;
-    height: auto;
+    height: 300px;
     margin-bottom: 10px;
 }
 
 .product-name {
-    color: white;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin: 5px 0;
+    font-size: 18px;
+    color: black;
 }
-
+.product-name:hover {
+    color: rgb(255, 196, 0);
+  }
 .product-description {
-    color: rgb(173, 178, 203);
+    color: black;
 }
 
 .product-warranty {
@@ -74,7 +81,11 @@
 }
 
 .product-price {
-    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+    text-align: center;
 }
 
 .product-rating {
@@ -113,4 +124,71 @@
 .btn.btn-primary {
     margin-left: 10px;
 }
-  
+.hero-box {
+    position: relative; /* Make the hero box a relative element for absolute positioning */
+    background-image: url(https://aslgate.com/wp-content/uploads/2021/03/image-38.png);
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 225px 0;
+}
+
+.hero-box .hero-text h1,
+.hero-box .hero-text p {
+    text-transform: uppercase;
+    line-height: 1em;
+    color: #ffffff;
+}
+
+.hero-box .hero-text h1 {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 0.08em;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    font-size: 72px;
+    line-height: 1em;
+    margin: 0 0 15px;
+    text-shadow: 0 0 10px #e5a384, 0 0 20px #e5b084, 0 0 40px #e5b884, 0 0 80px #e5a784, 0 0 100px #e5b084, 0 0 140px #e5be84, 0 0 200px #e5b084, 0 0 300px #e5b384;
+}
+
+.hero-box .hero-text p {
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    line-height: 1em;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 80px;
+    text-shadow: 0 0 20px #e59784;
+}
+.btn.btn-primary {
+    background: #ffffff;
+    border-radius: 5px;
+    color: #e59284;
+    height: 55px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0 40px;
+    border: 2px solid #7a3636;
+}
+
+    .btn.btn-primary:hover {
+        background: #e5a784;
+        color: #ffffff;
+    }
+    .product-categories input {
+        appearance: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin: 0;
+      }
+      
+      .product-categories input:checked {
+        background-color: #007bff;
+        color: #fff;
+      }
+      

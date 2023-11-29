@@ -34,7 +34,15 @@ export class OrderAdminComponent implements OnInit{
   }
   ngOnInit(): void {
     debugger
+    this.currentPage = Number(localStorage.getItem('currentOrderAdminPage')) || 0; 
     this.getAllOrders(this.keyword, this.currentPage, this.itemsPerPage);
+  }
+  searchOrders() {
+    this.currentPage = 0;
+    this.itemsPerPage = 12;
+    //Mediocre Iron Wallet
+    debugger
+    this.getAllOrders(this.keyword.trim(), this.currentPage, this.itemsPerPage);
   }
   getAllOrders(keyword: string, page: number, limit: number) {
     debugger
@@ -56,7 +64,8 @@ export class OrderAdminComponent implements OnInit{
   }
   onPageChange(page: number) {
     debugger;
-    this.currentPage = page;
+    this.currentPage = page < 0 ? 0 : page;
+    localStorage.setItem('currentOrderAdminPage', String(this.currentPage));         
     this.getAllOrders(this.keyword, this.currentPage, this.itemsPerPage);
   }
 
@@ -74,6 +83,7 @@ export class OrderAdminComponent implements OnInit{
     return new Array(endPage - startPage + 1).fill(0)
         .map((_, index) => startPage + index);
   }
+
   deleteOrder(id:number) {
     const confirmation = window
       .confirm('Are you sure you want to delete this order?');

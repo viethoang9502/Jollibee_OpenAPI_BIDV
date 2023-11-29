@@ -5,7 +5,96 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5d6400f-a0a0-4160-9864-22b774b3ec21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/components/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/components/CustomHealthCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/FlywayConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/OpenApiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/ProductImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/category/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/category/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orderdetails/IOrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orderdetails/OrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orders/IOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orders/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/IProductRedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/ProductRedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/image/IProductImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/image/ProductImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/role/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/role/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/user/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dev/db/migration/V1__alter_some_tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/0f5effcd-14f8-4270-9928-ede16f7f1117_Screenshot 2023-11-26 at 11.57.56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/1ea370f0-8af6-49f6-a9f3-cadc59d764e1_Screenshot 2023-11-26 at 12.02.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/45116af1-98d2-4b74-9b52-57741cc8f878_Screenshot 2023-11-26 at 11.57.59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/51dfc509-43e8-4e13-9247-5fad3f90ffeb_Screenshot 2023-11-23 at 16.48.39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/5e1ca790-c1f5-4273-8ffc-12eb7bf75750_Screenshot 2023-11-27 at 10.50.47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/6c8c5d88-6595-4e13-9715-7d6a268c6a2d_Screenshot 2023-11-26 at 23.35.47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/8402003f-d864-402f-8ebe-2223b47f3c41_Screenshot 2023-11-23 at 16.48.33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/8c244a91-463d-4bc8-8535-e4f40e906248_Screenshot 2023-11-23 at 15.46.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/b6ab5071-b46f-44ef-98cd-400b05ae9d8a_Screenshot 2023-11-26 at 14.33.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/b958bf41-bf88-4f52-a5ac-b1c9db4a16c0_Screenshot 2023-11-23 at 16.48.33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/c128ae13-f92d-4b65-b942-857138567f37_Screenshot 2023-11-23 at 15.46.11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/c7a0fefd-2593-490f-aa92-2633360acf79_Screenshot 2023-11-26 at 12.02.02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/d66e3e89-3e0a-4e4a-a390-4c81cdea49c7_Screenshot 2023-11-26 at 14.33.13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/e50b06a3-f339-4fb7-82b2-8cb66fb4c5f0_Screenshot 2023-11-23 at 16.48.33.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopapp/src/main/resources/logs/application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/configurations/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/HealthCheckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/HealthCheckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/responses/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/shopapp/responses/ProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/ICategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/IOrderDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/IOrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/IRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/OrderDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/RoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/shopapp/services/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/category/category.admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/category/category.admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/category/category.admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/category/category.admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/order/order.admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/admin/product/product.admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/detail-product/detail-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/detail-product/detail-product.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/detail-product/detail-product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/detail-product/detail-product.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/components/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/dtos/user/login.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/dtos/user/login.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/services/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fontend/src/app/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../fontend/src/app/services/product.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +104,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.1.2/spring-data-commons-3.1.2.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,20 +139,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/vovie/OneDrive/Desktop/SpringBoot/Shopapp-angular/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.ShopappApplication">
     <configuration name="ShopappApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.shopapp.ShopappApplication" />
       <module name="shopapp" />
@@ -73,15 +176,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="shopapp-backend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="shopapp-backend" />
-      <option name="filePath" />
+    <configuration name="ShopappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="shopapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.shopapp.ShopappApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,8 +197,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694742929723</updated>
+      <workItem from="1700927900643" duration="5680000" />
+      <workItem from="1700964333220" duration="1074000" />
+      <workItem from="1701007297601" duration="2940000" />
+      <workItem from="1701049623750" duration="114000" />
+      <workItem from="1701049854776" duration="5149000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
@@ -114,6 +219,17 @@
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
     <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
@@ -124,64 +240,109 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/UserController.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/UserService.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/OrderService.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orders/OrderService.java</url>
           <line>61</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/OrderService.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/orders/OrderService.java</url>
           <line>139</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/ProductListener.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/components/CustomHealthCheck.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/models/User.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="26" />
+          <line>76</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/OrderController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/filters/JwtTokenFilter.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/CategoryController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/category/CategoryService.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/category/CategoryService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/category/CategoryService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/services/product/image/ProductImageService.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/shopapp/controllers/ProductImageController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="136" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
