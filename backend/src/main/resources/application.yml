@@ -67,5 +67,10 @@ management:
       exposure:
         #include: "health"
         include: "health, info"
+bidv:
+  api:
+    clientId: 123545
+    clientSecret: 2da23c15823448f73a2843186764867a
+    authUrl: https://openapi.bidv.com.vn/path/to/auth
 
 

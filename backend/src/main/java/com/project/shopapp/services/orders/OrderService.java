@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -130,6 +131,7 @@ public class OrderService implements IOrderService{
         // Cập nhật các trường của đơn hàng từ orderDTO
         modelMapper.map(orderDTO, order);
         order.setUser(existingUser);
+        order.setOrderDate(LocalDate.from(LocalDateTime.now()));
         return orderRepository.save(order);
     }
 

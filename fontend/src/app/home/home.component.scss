@@ -1,0 +1,69 @@
+    .intro-section{
+        text-align: center;
+        color: white;    
+        padding: 20px;
+    }
+    .search-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-category{
+        width: 200px;
+    }
+    .search-input{
+        width: 300px;
+        background-color: rgb(19,23,42);
+        margin-right: 10px;
+        border-color: rgba(255,255,255,0.5);
+        color: white;
+    }
+    .form-control {
+        background-color: transparent;
+        color: white;
+    }
+    .form-control::placeholder { /*chorme*/
+        color: rgba(255,255,255,0.5);
+        opacity: 1;
+    }
+    .product-item {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 50px;
+    }
+    .product-image {
+        max-width: 100%;    
+        width: 750px;
+        height: 200px;
+        margin-bottom:  10px;
+    } 
+    .produce-name {
+        text-transform: uppercase;
+        font-size: 17px;    
+    }
+    .produce-description {
+        color:black;
+    }
+    .produce-price {
+        color: black;
+    }
+    .produce-rating {
+        color: yellow;
+    }
+    .space-x {
+        margin-right: 30px; 
+    }   
+    .product-actions {
+        margin-left: 3px;
+        margin-top: 10px;
+        font-size: 0.8rem;
+    }
+    .product-actions button.btn-success {
+        background-color: #63d867;
+    }
+    .product-actions button.btn-danger {
+        background-color: rgb(218, 100, 79);
+    }
+      
