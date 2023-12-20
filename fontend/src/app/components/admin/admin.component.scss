@@ -14,7 +14,7 @@
     /* Center-align text in the header */
 }
 #sidebar {
-    background-color: #007bff !important; /* Primary color */
+    background-color: rgb(216, 231, 0) !important; /* Primary color */
     color: white; /* Text color */
     height: 100vh;
     overflow-y: auto; /* Add scrollbars if content overflows */
@@ -28,11 +28,11 @@
 /* Custom CSS for active link */
 #sidebar a.active {
     font-weight: bold; /* Highlight active link */
-    background-color: #0056b3;
+    background-color: rgb(116, 179, 0);
 }
 /* Change background color on hover */
 #sidebar a:hover {
-    background-color: #0056b3; /* Change the background color on hover */
+    background-color: #a7b300; /* Change the background color on hover */
 }
 .icon {
     padding: 5px;

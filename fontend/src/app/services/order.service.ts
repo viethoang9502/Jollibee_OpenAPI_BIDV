@@ -19,6 +19,17 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
+  sendOtp(amount: number): Observable<any> {
+    var data = {
+      "amount": amount
+    }
+    return this.http.post(`${environment.apiBaseUrl}/payment`, data);
+  }
+
+  corfirmOtp(data: any): Observable<any> {
+    return this.http.post(`${environment.apiBaseUrl}/payment/confirm`, data);
+  }
+
   placeOrder(orderData: OrderDTO): Observable<any> {    
     // Gửi yêu cầu đặt hàng
     return this.http.post(this.apiUrl, orderData);

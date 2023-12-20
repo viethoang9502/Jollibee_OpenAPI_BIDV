@@ -9,6 +9,8 @@ import { OrderDTO } from '../../dtos/order/order.dto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Order } from 'src/app/models/order';
+import * as $AB from 'jquery';
+import * as bootstrap from "bootstrap";
 
 @Component({
   selector: 'app-order',
@@ -34,6 +36,9 @@ export class OrderComponent implements OnInit{
     coupon_code: '', // Sẽ được điền từ form khi áp dụng mã giảm giá
     cart_items: []
   };
+  dataOtp = {};
+  id = -1;
+  
 
   constructor(
     private cartService: CartService,
@@ -97,8 +102,45 @@ export class OrderComponent implements OnInit{
       }
     });        
   }
+  closeModal(){
+    (<any>$('#myModal')).modal('hide');
+  }
+  sendOtp(){
+    debugger;
+    if($('#otp').val() == "123456"){
+      this.orderService.corfirmOtp(this.dataOtp).subscribe({
+        next: (response) => {
+          if(response.resDesc == "Thành công"){
+            this.orderData.status = 'processing';
+            this.orderService.updateOrder(this.id, this.orderData).subscribe({
+            next: (response) => {
+            },
+            error: (error: any) => {
+              debugger;
+              // alert(`Thanh toán không thành công, lỗi: ${error}`);
+            },
+          });
+          alert('Thanh toán thành công!');
+          this.cartService.clearCart();
+          this.router.navigate(['/']);
+          }else{
+            alert(`Thanh toán không thành công`);
+          }
+          
+        },
+        error: (error: any) => {
+          debugger;
+          alert(`Thanh toán không thành công, lỗi: ${error}`);
+        },
+      });
+      
+    }else{
+      alert('OTP không chính xác!');
+    }
+  }
   placeOrder() {
     debugger
+    
     if (this.orderForm.errors == null) {
       // Gán giá trị từ form vào đối tượng orderData
       /*
@@ -122,21 +164,32 @@ export class OrderComponent implements OnInit{
       this.orderData.total_money =  this.totalAmount;
       // Dữ liệu hợp lệ, bạn có thể gửi đơn hàng đi
       this.orderService.placeOrder(this.orderData).subscribe({
-        next: (response:Order) => {
-          debugger;          
-          alert('Đặt hàng thành công');
-          this.cartService.clearCart();
-          this.router.navigate(['/']);
-        },
-        complete: () => {
-          debugger;
-          this.calculateTotal();
-        },
-        error: (error: any) => {
-          debugger;
-          alert(`Lỗi khi đặt hàng: ${error}`);
-        },
-      });
+      next: (response:Order) => {
+        debugger;        
+        this.id = response.id;
+        alert('Đặt hàng thành công');
+        if(this.orderData.total_money != undefined){
+          this.orderService.sendOtp(this.orderData.total_money).subscribe({
+            next: (response) => {
+              this.dataOtp = response;
+              (<any>$('#myModal')).modal('show');
+            },
+            error: (error: any) => {
+              debugger;
+              alert(`Lỗi khi gửi OTP: ${error}`);
+            },
+          });
+        }
+      },
+      complete: () => {
+        debugger;
+        this.calculateTotal();
+      },
+      error: (error: any) => {
+        debugger;
+        alert(`Lỗi khi đặt hàng: ${error}`);
+      },
+    });
     } else {
       // Hiển thị thông báo lỗi hoặc xử lý khác
       alert('Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.');

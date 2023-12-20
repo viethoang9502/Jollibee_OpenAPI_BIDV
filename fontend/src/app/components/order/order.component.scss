@@ -1,43 +1,53 @@
 @import '../../styles/shared-styles.scss';
-
 .container {
-    color: white;
+    color: black;
 }
 .intro-section {
-    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
     padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: none;
     text-align: center;
 }
 .product-header {
-    color: $shopapp-tint-color;
+    color: rgb(0, 0, 0);
 }
 .form-control {
-    background-color: $shopapp-background-color;
+    
+    background-color: white;
     border: 1px solid rgb(29, 33, 54);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .form-control:focus {
-    border-color: white;
+    border-color: rgb(0, 0, 0);
     background-color: $shopapp-background-color;
 }
 .form-label {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .product-header {
-    color: $shopapp-tint-color;
+    font-family:  Arial, Helvetica, sans-serif ;
+    color: black;
+    margin-bottom: 20px;
 }
-.product-order {
-    color: $shopapp-title-color;
+.product-order{
+    font-family:  Arial, Helvetica, sans-serif ;
+    color: black;
+    margin-bottom: 40px;
 }
 table {
     width: 100%;
+    background-color: #ffd8d8; /* Light red color */
     border-radius: 10px;
     border: none;
     border-collapse: separate;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
     border-spacing: 0;
-    background-color: $shopapp-background-color;    
+    color :black;  
 }
 
 th,
@@ -58,7 +68,7 @@ td {
 }
 
 .product-name {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-right: 10px;
 }
 .btn-gradient {
