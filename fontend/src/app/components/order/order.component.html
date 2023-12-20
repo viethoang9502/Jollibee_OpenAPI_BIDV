@@ -1,0 +1,163 @@
+<app-header></app-header>
+<div class="container">
+    <div class="intro-section">
+        <img src="https://daiphatvienthong.vn/upload/images/giao%20hang.jpg" alt="Product Image" class="order-info-image">
+        <hr style="color: rgb(0, 0, 0); width: 1300px; height: 30px;">
+        <h1>THÔNG TIN ĐƠN HÀNG</h1>
+      </div>
+      
+    <form [formGroup]="orderForm"> <!-- Thêm form và gán formGroup -->   
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="product-header">Giao hàng đến</h2>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Họ và tên</label>
+                    <input type="text" 
+                        formControlName="fullname" 
+                        class="form-control" 
+                        id="fullname" 
+                        [class.is-invalid]="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched">
+                    <div 
+                        *ngIf="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched" 
+                        class="invalid-feedback">
+                        Họ và tên là trường bắt buộc.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" 
+                        formControlName="email" 
+                        class="form-control" 
+                        id="email" 
+                        [class.is-invalid]="orderForm.get('email')!.invalid && orderForm.get('email')!.touched">
+                    <div *ngIf="orderForm.get('email')!.invalid && orderForm.get('email')!.touched" 
+                        class="invalid-feedback">
+                        {{ orderForm.get('email')!.hasError('email') ? 'Email không hợp lệ' : 'Email là trường bắt buộc' }}
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="text" 
+                        class="form-control" 
+                        formControlName="phone_number"                         
+                        placeholder="Số điện thoại" 
+                        required
+                        id="phone" 
+                        [class.is-invalid]="orderForm.get('phone_number')!.invalid && orderForm.get('phone_number')!.touched">
+                        <div *ngIf="orderForm.get('phone_number')!.invalid && orderForm.get('phone_number')!.touched" class="invalid-feedback">
+                        Số điện thoại là trường bắt buộc và ít nhất 6 ký tự.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Địa chỉ</label>
+                    <input type="text" 
+                        class="form-control" 
+                        formControlName="address"                         
+                        placeholder="Địa chỉ" 
+                        required
+                        id="address" 
+                        [class.is-invalid]="orderForm.get('address')!.invalid && orderForm.get('address')!.touched">
+                    <div *ngIf="orderForm.get('address')!.invalid && orderForm.get('address')!.touched" class="invalid-feedback">
+                        Địa chỉ là trường bắt buộc và ít nhất 5 ký tự.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="note" class="form-label">Ghi chú</label>
+                    <input type="text" 
+                        class="form-control" 
+                        formControlName="note"                                                 
+                        placeholder="Ghi chú" 
+                        required
+                        id="note">
+                </div>
+                <div class="mb-3">
+                    <label for="shippingMethod">Phương thức vận chuyển</label>
+                    <select class="form-control" id="shippingMethod" 
+                        formControlName="shipping_method">
+                        <option value="express">Nhanh (Express)</option>
+                        <option value="normal">Thường (Normal)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="paymentMethod">Phương thức thanh toán</label>
+                    <select class="form-control" id="paymentMethod"
+                        formControlName="payment_method">                     
+                        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                        <option value="cod">Thanh toán qua SMS BIDV</option>
+                        <option value="cod">Thanh toán qua mã QR BIDV</option>
+                        <option value="other">Thanh toán khác</option>
+                    </select>
+                </div>
+            <!-- </form> -->
+        </div>        
+        <div class="col-md-6">
+            <h2 class="product-order">Sản phẩm đã đặt hàng</h2>
+            <table>
+            <thead>
+                <tr>
+                    <th scope="col" class="text-start">Sản phẩm</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Tổng giá</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of cartItems">
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img [src]="item.product.thumbnail" alt="Product Image" class="product-image">
+                                <span class="product-name">{{ item.product.name }}</span>
+                            </div>
+                        </td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.price | number:'1.2-2' }}</td>
+                        <td>{{ (item.product.price * item.quantity) | number:'1.2-2' }}</td>
+
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>   
+
+            <div class="text-start mt-3">
+                <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number:'1.2-2'}}</h4>
+            </div>
+            <div class="mt-3">
+                <h4 class="product-header">Nhập coupon</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nhập coupon">
+                    <button class="btn btn-gradient" type="button">Áp dụng</button>
+                </div>
+            </div>            
+            <div class="text-start mt-3">
+                <button 
+                    (click)="placeOrder()"
+                    class="btn btn-gradient" type="button">Đặt hàng</button>
+            </div>
+        </div>
+    </div>   
+</form> 
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nhập mã OTP</h5>
+                <button (click)="closeModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>OTP:</label>
+                <input class="form-control" type="number" id="otp"/>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-gradient mt-3" (click)="sendOtp()">Gửi</button>
+                </div>
+            </div>
+            <img src="data:image/png;base64,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" alt="QR Code">
+        </div>  
+    </div>
+</div>
+
+<app-footer></app-footer>
