@@ -1,8 +1,7 @@
 <app-header></app-header>
 <div class="container">
     <div class="intro-section">
-        <h1>CHI TIẾT SẢN PHẨM</h1>
-
+        <h1 class="intro-name">CHI TIẾT SẢN PHẨM</h1>
     </div>    
     <div class="row">
       <div class="col-md-6">
@@ -39,7 +38,7 @@
       </div>
       <div class="col-md-6">
         <div class="product-details">
-          <h2>{{ product?.name }}</h2>
+          <h2 class="product-details-name">{{ product?.name }}</h2>
           <p>{{ product?.description }}</p>
           <p>Giá: ${{ product?.price }}</p>
           <p>Tổng tiền: ${{ getTotalPrice() }}</p>

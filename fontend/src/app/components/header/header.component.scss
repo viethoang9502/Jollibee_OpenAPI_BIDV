@@ -1,11 +1,13 @@
 @import '../../styles/shared-styles.scss';
 .logo{
-    width: 60px;
-    height: 60px;
+
+    width: 100px;
+    height: 100px;
+    margin-right: 100px;
 }
 header {
-    background-color: rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
+    background-color: #e31837;
+    color: #e31837;
 }
 
 .navbar {
@@ -17,17 +19,22 @@ header {
 }
 
 .navbar .container .navbar-brand {
-    color: rgb(173, 178, 203);
+    color: white;
 }
 
 .navbar .container .navbar-nav .nav-link {
-    color: rgb(173, 178, 203);
+    font-weight: 900;
+    color: white;
     border-radius: 18px;
     padding: 8px 16px;
+    font-size: 15px;
+    text-transform: uppercase; /* Viết hoa tất cả chữ cái */
 }
 
+
+
 .navbar .container .navbar-nav .nav-link.active {
-    background-color: red;
+    background-color: #d87171;
     color: white !important;
 }
 .nav-item.active {
@@ -54,3 +61,8 @@ header {
     background-color: #f0f0f0;
     color: $shopapp-color;    
 }
+
+.navbar-brand {
+    padding-left: 70px;
+}
+

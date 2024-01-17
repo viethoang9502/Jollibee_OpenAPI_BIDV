@@ -66,8 +66,16 @@
         text-transform: uppercase;
         word-wrap: break-word;
         margin: 5px 0;
+        font-weight: 900;
         font-size: 18px;
-        color: black;
+        color: #323232;
+        height: 120px; /* Đặt chiều cao tương đương với 4 dòng */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* Số dòng tối đa để hiển thị */
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
     }
     .product-name:hover {
         color: rgb(255, 196, 0);
@@ -83,7 +91,8 @@
     .product-price {
         text-transform: uppercase;
         font-weight: bold;
-        color: red;
+        font-weight: 900;
+        color: #e31837;
         font-size: 18px;
         text-align: center;
     }
@@ -125,8 +134,9 @@
         margin-left: 10px;
     }
     .hero-box {
+        padding-top: 200px;
         position: relative; /* Make the hero box a relative element for absolute positioning */
-        background-image: url(https://aslgate.com/wp-content/uploads/2021/03/image-38.png);
+        background-image: url(https://images.foody.vn/res/g64/630562/prof/s/image-47a982d5-240109153849.jpeg);
         background-size: contain;
         background-position: center;
         background-attachment: fixed;
@@ -149,7 +159,7 @@
         font-size: 72px;
         line-height: 1em;
         margin: 0 0 15px;
-        text-shadow: 0 0 10px #e5a384, 0 0 20px #e5b084, 0 0 40px #e5b884, 0 0 80px #e5a784, 0 0 100px #e5b084, 0 0 140px #e5be84, 0 0 200px #e5b084, 0 0 300px #e5b384;
+        text-shadow: 0 0 10px #da7a4d, 0 0 20px #e5b084, 0 0 40px #e5b884, 0 0 80px #e5a784, 0 0 100px #e5b084, 0 0 140px #e5be84, 0 0 200px #e5b084, 0 0 300px #e5b384;
     }
 
     .hero-box .hero-text p {
@@ -195,5 +205,5 @@
             margin-left: 5px;
             border: 1px solid #ffffff;
         }
-        
+ 
 

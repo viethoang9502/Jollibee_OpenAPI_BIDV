@@ -19,10 +19,10 @@ public class PaymentService implements IPaymentService{
 
     @Override
     public String getToken() {
-        //create auth
+        // create auth
         String auth = createAuth();
         String endpoint = "https://openapi.bidv.com.vn/bidv/sandbox/paygate-oauth/oauth2/token";
-        try{
+        try {
             URL url = new URL(endpoint);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
@@ -30,10 +30,12 @@ public class PaymentService implements IPaymentService{
             connection.setRequestProperty("Authorization", "Basic " + auth);
             connection.setDoOutput(true);
             String formData = "grant_type=client_credentials&scope=ewallet";
+
             try (OutputStream os = connection.getOutputStream()) {
                 byte[] input = formData.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
+
             try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
                 String inputLine;
                 StringBuilder content = new StringBuilder();
@@ -41,15 +43,21 @@ public class PaymentService implements IPaymentService{
                 while ((inputLine = in.readLine()) != null) {
                     content.append(inputLine);
                 }
+
                 JSONObject jsonObject = new JSONObject(content.toString());
-                return jsonObject.getString("access_token");
+                String accessToken = jsonObject.getString("access_token");
+
+                // In giá trị token ra console
+                System.out.println("Access Token: " + accessToken);
+
+                return accessToken;
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
+
 
     @Override
     public String initOtp(int amount) {
@@ -163,4 +171,5 @@ public class PaymentService implements IPaymentService{
         String authString = key + ":" + secret;
         return Base64.getEncoder().encodeToString(authString.getBytes());
     }
+
 }

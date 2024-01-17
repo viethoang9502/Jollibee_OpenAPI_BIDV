@@ -1,16 +1,16 @@
 #scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/sql root@45.117.179.175:/root/
 
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend root@45.117.179.175:/root/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend/src/main/resources/application.yaml root@45.117.179.175:/root/shopapp-backend/src/main/resources/
-#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-backend/pom.xml root@45.117.179.175:/root/shopapp-backend/pom.xml
+#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/backend root@45.117.179.175:/root/
+#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/backend/src/main/resources/application.yaml root@45.117.179.175:/root/backend/src/main/resources/
+#scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/backend/pom.xml root@45.117.179.175:/root/backend/pom.xml
 #scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/deployment.yaml root@45.117.179.175:/root/
 #scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/DockerfileJavaSpring root@45.117.179.175:/root/
 
 #Deploy angular app
 #copy angular code to server
-#rm -rf /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular/node_modules
-#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular root@45.117.179.175:/root/
-#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/shopapp-angular/src/app/environments/environment.ts root@45.117.179.175:/root/shopapp-angular/src/app/environments/
+#rm -rf /Users/hoangnd/Documents/code/udemy/ShopApp/fontend/node_modules
+#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/fontend root@45.117.179.175:/root/
+#scp -r /Users/hoangnd/Documents/code/udemy/ShopApp/fontend/src/app/environments/environment.ts root@45.117.179.175:/root/fontend/src/app/environments/
 #scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/DockerfileAngular root@45.117.179.175:/root/
 #scp -pr /Users/hoangnd/Documents/code/udemy/ShopApp/deployment.yaml root@45.117.179.175:/root/
 
@@ -21,7 +21,7 @@ services:
     image: mysql:8.2.0    
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Abc123456789@
+      MYSQL_ROOT_PASSWORD: 184466874
       MYSQL_DATABASE: ShopApp
     ports:
       - 3307:3306
@@ -84,12 +84,12 @@ services:
       retries: 3
       start_period: 20s #20s after container created, health check     
 
-  shopapp-angular-container:    
-    container_name: shopapp-angular-container    
+  fontend-container:    
+    container_name: fontend-container    
     build:
       context: .
       dockerfile: DockerfileAngular            
-      #docker tag <image_id> shopapp-angular:1.0.0
+      #docker tag <image_id> fontend:1.0.0
     ports:
       - "4301:80"
     restart: always    
@@ -119,9 +119,9 @@ networks:
 #docker-compose -f ./deployment.yaml up -d shopapp-spring-container --build
 #docker logs shopapp-spring-container
 
-#docker-compose -f ./deployment.yaml rm -s -f shopapp-angular-container
-#docker-compose -f ./deployment.yaml up -d shopapp-angular-container
-#docker logs shopapp-angular-container 
+#docker-compose -f ./deployment.yaml rm -s -f fontend-container
+#docker-compose -f ./deployment.yaml up -d fontend-container
+#docker logs fontend-container 
 
 #docker-compose -f ./deployment.yaml rm -s -f redis-container
 #docker-compose -f ./deployment.yaml up -d redis-container
