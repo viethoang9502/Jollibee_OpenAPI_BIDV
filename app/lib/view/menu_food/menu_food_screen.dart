@@ -4,6 +4,7 @@ import 'package:Jollibee/res/style/app_colors.dart';
 import 'package:Jollibee/viewmodels/product_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 
 import '../../locator.dart';
 import '../../services/shared_pref_service.dart';
@@ -48,7 +49,8 @@ class _MenuFoodScreenState extends State<MenuFoodScreen> {
                       productId: viewModel.listProduct[index].id.toString(),
                       image: viewModel.listProduct[index].thumbnail.toString(),
                       title: viewModel.listProduct[index].name.toString(),
-                      price: viewModel.listProduct[index].price.toString(),
+                      price: NumberFormat.currency(locale: 'vi', symbol: 'VND', decimalDigits: 0)
+                          .format(viewModel.listProduct[index].price),
                       onTap: () => SharedPrefService().updateCartWithProductId(
                           viewModel.listProduct[index].id,
                           viewModel.listProduct[index].name.toString(),

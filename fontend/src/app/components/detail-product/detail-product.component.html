@@ -40,8 +40,8 @@
         <div class="product-details">
           <h2 class="product-details-name">{{ product?.name }}</h2>
           <p>{{ product?.description }}</p>
-          <p>Giá: ${{ product?.price }}</p>
-          <p>Tổng tiền: ${{ getTotalPrice() }}</p>
+          <p>Giá: {{ product?.price }} VND</p>
+          <p>Tổng tiền: {{ getTotalPrice() }} VND</p>
           <div class="product-quantity">
             <div class="border-wrapper">
               <button (click)="decreaseQuantity()">-</button>

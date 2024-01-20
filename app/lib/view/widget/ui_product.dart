@@ -92,7 +92,4 @@ class UiProduct extends StatelessWidget {
   }
 }
 
-double parsePrice(String price) {
-  String numericString = price.replaceAll('đ', '').replaceAll('.', '');
-  return double.tryParse(numericString) ?? 0.0;
-}
+

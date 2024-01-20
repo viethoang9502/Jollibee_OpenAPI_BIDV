@@ -6,6 +6,17 @@ import { CategoryService } from 'src/app/services/category.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'currencyFormat'
+})
+
+export class CurrencyFormatPipe implements PipeTransform {
+  transform(value: number): string {
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+  }
+}
 
 @Component({
   selector: 'app-home',

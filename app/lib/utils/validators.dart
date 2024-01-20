@@ -56,6 +56,6 @@ class Validators {
   }
   static String formatCurrency(double amount) {
   final format = NumberFormat("#,##0", "vi_VN");
-  return "${format.format(amount)} đ";
+  return "${format.format(amount)} VND";
 }
 }

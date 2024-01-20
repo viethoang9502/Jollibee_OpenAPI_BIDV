@@ -21,6 +21,7 @@ import {
   HttpClientModule, 
   HTTP_INTERCEPTORS 
 } from '@angular/common/http';
+import { CurrencyFormatPipe } from './currency-format.pipe';
 
 @NgModule({
   declarations: [    
@@ -33,7 +34,8 @@ import {
     LoginComponent, 
     RegisterComponent, 
     UserProfileComponent,
-    AppComponent,    
+    AppComponent,
+    CurrencyFormatPipe,    
     //admin    
     //AdminComponent,
     //OrderAdminComponent,
