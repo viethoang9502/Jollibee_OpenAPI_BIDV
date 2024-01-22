@@ -14,13 +14,14 @@
                       <a class="nav-link" 
                         [ngClass]="{ 'active': activeNavItem === 0 }"
                         (click)="setActiveNavItem(0)"
-                        routerLink="/">Trang chủ</a>
+                        routerLink="/"><i class="fa fa-home" aria-hidden="true" style="font-size: 22px;"></i>
+                        Trang chủ</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" 
                         [ngClass]="{ 'active': activeNavItem === 1 }"
                         (click)="setActiveNavItem(1)"
-                        routerLink="#">Thông báo</a>
+                        routerLink="#"><i class="fa fa-bullhorn" aria-hidden="true" style="font-size: 22px;"></i> Thông báo</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" 
