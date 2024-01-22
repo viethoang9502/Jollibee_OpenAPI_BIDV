@@ -16,18 +16,16 @@ import { OrderResponse } from '../responses/order/order.response';
 export class OrderService {
   private apiUrl = `${environment.apiBaseUrl}/orders`;
   private apiGetAllOrders = `${environment.apiBaseUrl}/orders/get-orders-by-keyword`;
-
+  private totalAmount: number = 0;
   constructor(private http: HttpClient) {}
-
-  sendOtp(amount: number): Observable<any> {
-    var data = {
-      "amount": amount
-    }
-    return this.http.post(`${environment.apiBaseUrl}/payment`, data);
+  
+  setTotalAmount(amount: number) {
+    this.totalAmount = amount;
   }
 
-  corfirmOtp(data: any): Observable<any> {
-    return this.http.post(`${environment.apiBaseUrl}/payment/confirm`, data);
+  // Method to get the total amount
+  getTotalAmount(): number {
+    return this.totalAmount;
   }
 
   placeOrder(orderData: OrderDTO): Observable<any> {    

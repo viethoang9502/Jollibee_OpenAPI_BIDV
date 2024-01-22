@@ -22,6 +22,7 @@ import {
   HTTP_INTERCEPTORS 
 } from '@angular/common/http';
 import { CurrencyFormatPipe } from './currency-format.pipe';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [    
@@ -32,10 +33,13 @@ import { CurrencyFormatPipe } from './currency-format.pipe';
     OrderComponent, 
     OrderDetailComponent, 
     LoginComponent, 
+    // PaymentComponent,
     RegisterComponent, 
     UserProfileComponent,
+    // PaymentComponent,
     AppComponent,
     CurrencyFormatPipe,    
+    PaymentComponent,
     //admin    
     //AdminComponent,
     //OrderAdminComponent,

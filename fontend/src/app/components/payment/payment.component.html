@@ -1,0 +1,28 @@
+<div class="qr_box">
+    <header>
+      <h1>QR Code Generator</h1>
+      <p>Paste URL or Enter TEXT to create QR-Code</p>
+    </header>
+  
+    <input #qrInput type="text" placeholder="Enter URL or TEXT">
+    <button class="generateBtn" (click)="generateQRCode()">Generate QR Code</button>
+    
+    <!-- Container cho logos -->
+    <img #qrImg src="" alt="qr-code" class="imgQR">
+    <div class="logos-container">
+      <!-- Logo BIDV -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_BIDV.svg/2560px-Logo_BIDV.svg.png" alt="BIDV Logo" class="logo">
+  
+      <!-- Divider -->
+      <div class="divider"></div>
+  
+      <!-- Logo Jollibee -->
+      <img src="https://download.logo.wine/logo/Jollibee/Jollibee-Logo.wine.png" alt="Jollibee Logo" class="logo">
+    </div>
+    <p class="total-amount">{{ totalAmount }} VND</p>
+    <p>
+        <span class="text-red">Jollibee </span>
+        <span class="text-green">cơ sở Vincom Bà Triệu</span>
+    </p>
+  </div>
+  

@@ -105,42 +105,10 @@ export class OrderComponent implements OnInit{
   closeModal(){
     (<any>$('#myModal')).modal('hide');
   }
-  sendOtp(){
-    debugger;
-    if($('#otp').val() == "123456"){
-      this.orderService.corfirmOtp(this.dataOtp).subscribe({
-        next: (response) => {
-          if(response.resDesc == "Thành công"){
-            this.orderData.status = 'processing';
-            this.orderService.updateOrder(this.id, this.orderData).subscribe({
-            next: (response) => {
-            },
-            error: (error: any) => {
-              debugger;
-              // alert(`Thanh toán không thành công, lỗi: ${error}`);
-            },
-          });
-          alert('Thanh toán thành công!');
-          this.cartService.clearCart();
-          this.router.navigate(['/']);
-          }else{
-            alert(`Thanh toán không thành công`);
-          }
-          
-        },
-        error: (error: any) => {
-          debugger;
-          alert(`Thanh toán không thành công, lỗi: ${error}`);
-        },
-      });
-      
-    }else{
-      alert('OTP không chính xác!');
-    }
-  }
+  
   placeOrder() {
     debugger
-    
+
     if (this.orderForm.errors == null) {
       // Gán giá trị từ form vào đối tượng orderData
       /*
@@ -168,22 +136,11 @@ export class OrderComponent implements OnInit{
         debugger;        
         this.id = response.id;
         alert('Đặt hàng thành công');
-        if(this.orderData.total_money != undefined){
-          this.orderService.sendOtp(this.orderData.total_money).subscribe({
-            next: (response) => {
-              this.dataOtp = response;
-              (<any>$('#myModal')).modal('show');
-            },
-            error: (error: any) => {
-              debugger;
-              alert(`Lỗi khi gửi OTP: ${error}`);
-            },
-          });
-        }
       },
       complete: () => {
         debugger;
         this.calculateTotal();
+        
       },
       error: (error: any) => {
         debugger;
@@ -193,7 +150,8 @@ export class OrderComponent implements OnInit{
     } else {
       // Hiển thị thông báo lỗi hoặc xử lý khác
       alert('Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.');
-    }        
+    } 
+    this.router.navigate(['/payment']);       
   }
     
     
@@ -204,6 +162,7 @@ export class OrderComponent implements OnInit{
           (total, item) => total + item.product.price * item.quantity,
           0
       );
+      this.orderService.setTotalAmount(this.totalAmount);
   }
 
   // Hàm xử lý việc áp dụng mã giảm giá
