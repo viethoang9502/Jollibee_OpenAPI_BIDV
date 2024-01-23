@@ -60,7 +60,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .logo {
@@ -82,12 +82,18 @@
 
   .text-red {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     color: rgb(199, 52, 52);
 }
 
 .text-green {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     color: #207a66;
+}
+.sotaikhoan {
+  color: rgb(15, 84, 112);
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
 }

@@ -136,6 +136,7 @@ export class OrderComponent implements OnInit{
         debugger;        
         this.id = response.id;
         alert('Đặt hàng thành công');
+        this.router.navigate(['/payment']);  
       },
       complete: () => {
         debugger;
@@ -151,7 +152,7 @@ export class OrderComponent implements OnInit{
       // Hiển thị thông báo lỗi hoặc xử lý khác
       alert('Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.');
     } 
-    this.router.navigate(['/payment']);       
+         
   }
     
     
