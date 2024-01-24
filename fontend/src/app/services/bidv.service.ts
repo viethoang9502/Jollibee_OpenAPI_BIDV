@@ -10,10 +10,12 @@
 
 //     private baseUrlToken = "https://openapi.bidv.com.vn/bidv/sandbox/openapi/oauth2/token"
 //     private baseUrl = "https://openapi.bidv.com.vn/bidv/sandbox/open-banking/"
+//     private hasCalledGetBranchs = false; 
 //     constructor(private http: HttpClient) {}
 
 //     getBranchs(): Observable<any> {
-//         const url = this.baseUrl + "branchandatm/inquiry/v1"
+//         this.hasCalledGetBranchs = true;
+//         const url = this.baseUrl + "qrcode/check/v1"
 //         const body = {}
 //         const headers = {
 //           "Content-Length": "0",
@@ -26,7 +28,7 @@
 //           "Connection": "keep-alive",
 //           "Accept": "application/json",
 //           "Accept-Language": "en-US,en;q=0.9,vi;q=0.8",
-//           "Authorization": "Bearer AAIgNzgyNWFhZTI5ZjkzYTczZmRjM2JlZGRkNWU1N2M0YjiMZSLaCN6pBl2wWQvYwX5jH4TrZ_u4_EWExhc1KBvVxpeLjw6OKHgnm98Z1-txzyijr-MvNUMDIkHI2eAhgEBdKmg7DPirOhDZhEY_d5J_s79UWBSWUPGGs_Q4KVGc1OE",
+//           "Authorization": "Bearer AAIgNzgyNWFhZTI5ZjkzYTczZmRjM2JlZGRkNWU1N2M0YjjF5euFtxU7NaDNHS-brIhsLnzYH-QVyjuQKzctTPlZZjswENGo4YP1HWVes8Ce-_e-9ajfoN5mRhAoGcfg-5c_UuJPFPzXP52AJcXTXFzJOKfTgiN27NvIaYTadfeWj-k",
 //           "Content-Type": "application/json",
 //           "Cookie": "session_store_id=KOzRvvqZev9A; 908681d7d547b2e6ca0bbda1f49c6763=8048af7c0c6f7c35e543efd0d602b939",
 //           "Origin": "https://openapi.bidv.com.vn",
@@ -44,5 +46,41 @@
 //         return this.http.post(url, body, {
 //           headers: headers 
 //         })
+        
 //     }
+//     hasCalledGetBranchs1(): boolean {
+//         return this.hasCalledGetBranchs;
+//       }
+    
 // }
+
+// <div class="qr_box">
+//     <header>
+//       <h1>QR Code Generator</h1>
+//       <p>Paste URL or Enter TEXT to create QR-Code</p>
+//     </header>
+  
+//     <input #qrInput type="text" placeholder="Enter URL or TEXT">
+//     <button class="generateBtn" (click)="generateQRCode()">Generate QR Code</button>
+    
+//     <!-- Container cho logos -->
+//     <img #qrImg src="" alt="qr-code" class="imgQR">
+//     <div class="logos-container">
+//       <!-- Logo BIDV -->
+//       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_BIDV.svg/2560px-Logo_BIDV.svg.png" alt="BIDV Logo" class="logo">
+  
+//       <!-- Divider -->
+//       <div class="divider"></div>
+  
+//       <!-- Logo Jollibee -->
+//       <img src="https://download.logo.wine/logo/Jollibee/Jollibee-Logo.wine.png" alt="Jollibee Logo" class="logo">
+//     </div>
+//     <p class="total-amount">{{ totalAmount }} VND</p>
+//     <p class="sotaikhoan">STK: 52011602182</p>
+//     <p>
+//         <span class="text-green">Chi nhánh </span>
+//         <span class="text-red">Jollibee </span>
+//         <span class="text-green">cơ sở Vincom Bà Triệu</span>
+//     </p>
+//   </div>
+//   <p class="total-amount">{{ totalAmount }} VND</p>

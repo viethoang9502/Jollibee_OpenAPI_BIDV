@@ -1,4 +1,6 @@
-.qr_box {
+@import '../../styles/shared-styles.scss';
+
+  .qr_box {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
@@ -8,16 +10,6 @@
     text-align: center;
   }
   
-  header h1 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  header p {
-    font-size: 14px;
-    color: #666;
-  }
   
   .qr_box input {
     width: 100%;
@@ -44,16 +36,6 @@
     background-color: #0056b3;
   }
   
-
-  /* Phong cách cho ảnh QR Code */
-  #qrImg {
-    width: 800px; /* Set width to 500px */
-    height: 500px; /* Maintain aspect ratio for height */
-    margin-top: 20px; /* Add space above */
-    border-radius: 5px; /* Optional border-radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
-    border: 2px solid #0000ff; /* Blue border, change '2px' to adjust thickness */
-  }
 
   .logos-container {
     margin-left: 25px;
@@ -96,4 +78,46 @@
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: 700;
+}
+
+.qr-image {
+
+  width: 250px;
+  height: 250px; 
+  border: 2px solid black; /* Adjust the color and width of the border as needed */
+  object-fit: cover; /* This ensures the image covers the area without stretching. Adjust as needed */
+  display: block; /* To ensure it takes the width/height properly */
+  margin: auto; /* For center alignment if needed */
+}
+
+.status-message {
+  color: green; /* Green text for the status message */
+  font-size: 14px;
+  margin-left: 200px; /* Remove default paragraph margin */
+}
+
+.status-head {
+  font-size: 14px;
+  margin-left: 200px;
+}
+
+.large-letter {
+  font-size: 1.3em; 
+  color: red;/* Điều chỉnh kích thước chữ V */
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.red-text {
+  color: red;
+  font-size: 0.8em; 
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.blue-text {
+  color: #2b1fd8; /* Màu xanh biển */
+  font-size: 0.8em; 
+  text-transform: uppercase;
+  font-weight: 500;
 }

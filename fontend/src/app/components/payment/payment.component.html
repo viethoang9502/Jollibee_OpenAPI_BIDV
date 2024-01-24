@@ -1,30 +1,42 @@
 <div class="qr_box">
-    <header>
-      <h1>QR Code Generator</h1>
-      <p>Paste URL or Enter TEXT to create QR-Code</p>
-    </header>
-  
-    <input #qrInput type="text" placeholder="Enter URL or TEXT">
-    <button class="generateBtn" (click)="generateQRCode()">Generate QR Code</button>
+  <header>
+    <h1>
+      <span class="large-letter">V</span>
+      <span class="red-text">IET</span>
+      <span class="blue-text">QR</span>
+    </h1>
     
-    <!-- Container cho logos -->
-    <img #qrImg src="" alt="qr-code" class="imgQR">
-    <div class="logos-container">
-      <!-- Logo BIDV -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_BIDV.svg/2560px-Logo_BIDV.svg.png" alt="BIDV Logo" class="logo">
-  
-      <!-- Divider -->
-      <div class="divider"></div>
-  
-      <!-- Logo Jollibee -->
-      <img src="https://download.logo.wine/logo/Jollibee/Jollibee-Logo.wine.png" alt="Jollibee Logo" class="logo">
-    </div>
-    <p class="total-amount">{{ totalAmount }} VND</p>
-    <p class="sotaikhoan">STK: 52011602182</p>
-    <p>
-        <span class="text-green">Chi nhánh </span>
-        <span class="text-red">Jollibee </span>
-        <span class="text-green">cơ sở Vincom Bà Triệu</span>
-    </p>
+  </header>
+  <div *ngIf="qrImageUrl">
+    <img [src]="qrImageUrl" alt="VietQR Image" class="qr-image">
   </div>
-  
+  <!-- Container for logos -->
+  <div class="logos-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Logo_BIDV.svg/2560px-Logo_BIDV.svg.png" alt="BIDV Logo" class="logo">
+    <div class="divider"></div>
+    <img src="https://download.logo.wine/logo/Jollibee/Jollibee-Logo.wine.png" alt="Jollibee Logo" class="logo">
+  </div>
+  <p class="total-amount">{{ totalAmount }} VND</p>
+  <p class="sotaikhoan">STK: 52011602182</p>
+  <p>
+      <span class="text-green">Chi nhánh </span>
+      <span class="text-red">Jollibee </span>
+      <span class="text-green">cơ sở Vincom Bà Triệu</span>
+  </p>
+<!-- payment.component.html -->
+<p>Thời gian còn lại: {{ countdown }} giây</p>
+  <p>Mô tả phản hồi: {{ resDesc }}</p>
+
+  <!-- Display information from API -->
+  <!-- <button class="btn btn-primary" (click)="initiatePayment()">Generate QR Code</button> -->
+
+</div>
+<div class="status-container" *ngIf="statusMessage">
+  <h2 class="status-head">Status call API:</h2>
+  <p class="status-message">{{ statusMessage }}</p>
+</div>
+
+  <!-- <div *ngIf="errorDesc">
+    <h2>Error Description</h2>
+    <p>{{ errorDesc }}</p>
+  </div> -->
