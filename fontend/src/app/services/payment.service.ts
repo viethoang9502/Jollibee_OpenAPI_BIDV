@@ -16,7 +16,7 @@ export class PaymentService {
   // Method to process a payment and get the response
   processPayment(paymentDTO: PaymentDTO): Observable<any> {
     // Replace `any` with a more specific type if you have one
-    return this.http.post<any>(`${this.apiBaseUrl}/payment`, paymentDTO);
+    return this.http.post<any>(`${this.apiBaseUrl}/payment`, paymentDTO );
   }
   checkPayment(CheckPaymentDTO: CheckPaymentDTO): Observable<any> {
     // Replace `any` with a more specific type if you have one

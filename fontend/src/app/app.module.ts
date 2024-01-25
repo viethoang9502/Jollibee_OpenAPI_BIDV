@@ -23,6 +23,7 @@ import {
 } from '@angular/common/http';
 import { CurrencyFormatPipe } from './currency-format.pipe';
 import { PaymentComponent } from './components/payment/payment.component';
+import { EwalletComponent } from './components/ewallet/ewallet.component';
 
 @NgModule({
   declarations: [    
@@ -40,6 +41,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     AppComponent,
     CurrencyFormatPipe,    
     PaymentComponent,
+    EwalletComponent,
     //admin    
     //AdminComponent,
     //OrderAdminComponent,
@@ -56,6 +58,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     AppRoutingModule,    
     NgbModule,        
     AdminModule,
+    
   ],
   providers: [
     {

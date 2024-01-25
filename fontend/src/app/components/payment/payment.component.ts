@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 import { CheckPaymentDTO } from 'src/app/dtos/payment/check.payment.dto';
 import { interval } from 'rxjs';
+import Swal from 'sweetalert2';
 import { take } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -13,6 +14,7 @@ import { CartService } from 'src/app/services/cart.service';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
+
 export class PaymentComponent implements OnInit {
   paymentForm: FormGroup; // FormGroup to manage form data
   qrImageUrl: string = ''; // URL for the QR image
@@ -24,7 +26,6 @@ export class PaymentComponent implements OnInit {
   countdown: number = 60;
 
   constructor(
-    
     private cartService: CartService,
     private paymentService: PaymentService,
     private orderService: OrderService,
@@ -42,8 +43,8 @@ export class PaymentComponent implements OnInit {
       this.checkPayment();
       this.initiatePayment();
       this.totalAmount = this.orderService.getTotalAmount();
-      interval(1000).pipe(take(60)).subscribe((x) => {
-        this.countdown = 60 - x;
+      interval(1000).pipe(take(120)).subscribe((x) => {
+        this.countdown = 120 - x;
         if (this.countdown === 0) {
           // Khi đồng hồ đếm ngược đạt đến 1 giây, chuyển hướng người dùng
           this.router.navigate(['/orders']);
@@ -84,23 +85,34 @@ export class PaymentComponent implements OnInit {
   
   checkPayment() {
     const checkPaymentDTO = new CheckPaymentDTO("Qrinfo_data");
-    
+  
     this.paymentService.checkPayment(checkPaymentDTO).subscribe({
       next: (response) => {
-        // Xử lý phản hồi thành công
         this.resDesc = response.resDesc;
         this.apiStatus = '200 OK';
-  
-        // Thiết lập một timeout để hiển thị alert sau 60 giây
-        // setTimeout(() => {
-        //   alert(this.resDesc);
-        //     this.cartService.clearCart();
-        //     this.router.navigate(['/orders']);
-          
-        // }, 10000); // 60000 milliseconds = 60 seconds
+        const messageContent = `Status call API from OpenAPI BIDV: ${this.apiStatus}`;
+        setTimeout(() => {
+        // Hiển thị thông báo SweetAlert2
+        Swal.fire({
+          title: this.resDesc,
+          text: messageContent,
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#3085d6',
+          customClass: {
+            popup: 'custom-popup-class' // Bạn có thể tạo class CSS tùy chỉnh
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.cartService.clearCart();
+            this.router.navigate(['/']);
+          }
+
+
+        });
+      }, 70000);
       },
       error: (error) => {
-        // Xử lý trường hợp lỗi
         console.error('Error:', error);
         this.apiStatus = 'Thất bại';
       }

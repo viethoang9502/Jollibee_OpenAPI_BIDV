@@ -62,7 +62,16 @@
                       <ng-container *ngIf="!userResponse">
                         <a class="nav-link" routerLink="/login">Đăng nhập</a>
                       </ng-container>
-                    </li>                                                                
+                  </li>          
+                    <li class="nav-item">
+                      <a class="nav-link" 
+                          [ngClass]="{ 'active': activeNavItem === 3 }"
+                          (click)="setActiveNavItem(3)"
+                          routerLink="/ewallet">
+                          <i class="fa-solid fa-wallet" style="font-size: 18px;"></i>
+                          Ví Jollibee {{ getFacebookAccountId() }} VND
+                      </a>
+                    </li>                                                      
               </ul>
           </div>
       </div>

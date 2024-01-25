@@ -1,0 +1,58 @@
+@import '../../styles/shared-styles.scss';
+
+.hero-box {
+  position: relative; /* Make the hero box a relative element for absolute positioning */
+  background-image: url(https://cdn.greatdeals.com.sg/wp-content/uploads/2020/10/21144628/jollibee-limited-edition-nets-flashpay-cards.jpg);
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 300px 0;
+}
+
+.container {
+  .card {
+    margin-top: 20px;
+    .card-body {
+      .card-title {
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+        .form-label {
+          font-weight: bold;
+        }
+        .is-invalid {
+          border-color: #dc3545;
+        }
+        .invalid-feedback {
+          color: #dc3545;
+        }
+      }
+      .btn {
+        margin: 5px;
+      }
+    }
+  }
+  .custom-alert {
+    // Styling for the alert (as previously described)
+    .brand-name {
+      color: rgb(245, 52, 52);
+      text-transform: uppercase;
+      font-weight: 900;
+      font-weight: bold;
+    }
+    background: linear-gradient(
+    to right, 
+    rgba(238, 130, 238, 0.5), /* violet */
+    rgba(75, 0, 130, 0.5),     /* indigo */
+    rgba(0, 0, 255, 0.5),      /* blue */
+    rgba(0, 128, 0, 0.5),      /* green */
+    rgba(255, 255, 0, 0.5),    /* yellow */
+    rgba(255, 165, 0, 0.5),    /* orange */
+    rgba(255, 0, 0, 0.5)       /* red */
+  );
+    color: white;
+  }
+  
+  
+}

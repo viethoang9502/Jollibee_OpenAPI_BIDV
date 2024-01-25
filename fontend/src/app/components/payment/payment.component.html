@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="qr_box">
   <header>
     <h1>
@@ -25,14 +26,13 @@
   </p>
 <!-- payment.component.html -->
 <p>Thời gian còn lại: {{ countdown }} giây</p>
-  <p>Mô tả phản hồi: {{ resDesc }}</p>
 
   <!-- Display information from API -->
   <!-- <button class="btn btn-primary" (click)="initiatePayment()">Generate QR Code</button> -->
 
 </div>
 <div class="status-container" *ngIf="statusMessage">
-  <h2 class="status-head">Status call API:</h2>
+  <h2 class="status-head">Status call API from OpenAPI BIDV:</h2>
   <p class="status-message">{{ statusMessage }}</p>
 </div>
 
@@ -40,3 +40,4 @@
     <h2>Error Description</h2>
     <p>{{ errorDesc }}</p>
   </div> -->
+  <app-footer></app-footer>

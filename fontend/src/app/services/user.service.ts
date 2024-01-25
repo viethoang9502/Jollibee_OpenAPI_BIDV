@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 import { HttpUtilService } from './http.util.service';
 import { UserResponse } from '../responses/user/user.response';
 import { UpdateUserDTO } from '../dtos/user/update.user.dto';
+import { EwalletDTO } from '../dtos/user/ewallet.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,8 @@ export class UserService {
       })
     })
   }
+
+  
   updateUserDetail(token: string, updateUserDTO: UpdateUserDTO) {
     debugger
     let userResponse = this.getUserResponseFromLocalStorage();        
@@ -50,6 +53,18 @@ export class UserService {
       })
     })
   }
+
+  updateUserDetail1(token: string, ewalletDTO: EwalletDTO) {
+    debugger
+    let userResponse = this.getUserResponseFromLocalStorage();        
+    return this.http.put(`${this.apiUserDetail}/${userResponse?.id}`,ewalletDTO,{
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    })
+  }
+
   saveUserResponseToLocalStorage(userResponse?: UserResponse) {
     try {
       debugger
@@ -65,22 +80,30 @@ export class UserService {
       console.error('Error saving user response to local storage:', error);
     }
   }
-  getUserResponseFromLocalStorage():UserResponse | null {
+  
+  getUserResponseFromLocalStorage(): UserResponse | null {
     try {
-      // Retrieve the JSON string from local storage using the key
-      const userResponseJSON = localStorage.getItem('user'); 
-      if(userResponseJSON == null || userResponseJSON == undefined) {
+      const userResponseJSON = localStorage.getItem('user');
+      if (userResponseJSON == null) {
         return null;
       }
-      // Parse the JSON string back to an object
-      const userResponse = JSON.parse(userResponseJSON!);  
+      const userResponse: UserResponse = JSON.parse(userResponseJSON);
       console.log('User response retrieved from local storage.');
-      return userResponse;
+  
+      // Truy xuất google_account_id và facebook_account_id
+      const googleAccountId = userResponse.google_account_id;
+      const facebookAccountId = userResponse.facebook_account_id;
+  
+      console.log('Google Account ID:', googleAccountId);
+      console.log('Facebook Account ID:', facebookAccountId);
+  
+      return userResponse; // Trả về đối tượng UserResponse
     } catch (error) {
       console.error('Error retrieving user response from local storage:', error);
-      return null; // Return null or handle the error as needed
+      return null;
     }
   }
+  
   removeUserFromLocalStorage():void {
     try {
       // Remove the user data from local storage using the key

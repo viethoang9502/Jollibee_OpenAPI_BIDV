@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="hero-box"></div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+
+    <!-- Column for Form -->
+    <div class="col-md-6">
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <h4 class="text-center mb-4">
+            <i class="fas fa-tags"></i> DISCOUNT
+          </h4>
+  
+          <div *ngIf="userResponse?.google_account_id" class="alert alert-info custom-alert">
+            <span class="brand-name">Jollibee</span> COUPON : {{ getGoogleAccountId() }}
+          </div>
+        </div>
+          <!-- Other form elements (if needed) -->
+        </div>
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">
+            <i class="fas fa-university"></i> WALLET TRADING
+          </h3>
+          <div class="form-group mb-3">
+            <label for="bankSelection" class="form-label">Select Bank:</label>
+            <select class="form-select" id="bankSelection" formControlName="bankSelection">
+              <option value="BIDV">BIDV Bank</option>
+              <option value="VCB">VCB Bank</option>
+            </select>
+          </div>
+          <form [formGroup]="ewalletForm" (ngSubmit)="saveFacebookAccountId()" class="mt-4">
+            <div class="form-group mb-3">
+              <label for="facebookAccountId" class="form-label">Money Trading:</label>
+              <input 
+                type="text" 
+                id="facebookAccountId" 
+                class="form-control"
+                formControlName="facebookAccountId"
+                [ngClass]="{'is-invalid': ewalletForm.get('facebookAccountId')?.invalid && (ewalletForm.get('facebookAccountId')?.dirty || ewalletForm.get('facebookAccountId')?.touched)}"
+              />
+              <div *ngIf="ewalletForm.get('facebookAccountId')?.invalid && (ewalletForm.get('facebookAccountId')?.dirty || ewalletForm.get('facebookAccountId')?.touched)" class="invalid-feedback">
+                Please enter a valid Money.
+              </div>
+            </div>
+            
+            <div class="d-grid gap-2 d-md-block text-center">
+              <button type="submit" class="btn btn-danger">Nạp Tiền</button>
+              <button type="button" class="btn btn-success" (click)="subtractFacebookAccountId()">Rút Tiền</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card shadow mb-4">
+      <div class="card-body">
+        <h4 class="text-center mb-4">
+          <i class="fas fa-tags"></i> DISCOUNT
+        </h4>
+
+        <div *ngIf="userResponse?.google_account_id" class="alert alert-info custom-alert">
+          <span class="brand-name">Jollibee</span> COUPON : {{ getGoogleAccountId() }}
+        </div>
+      </div>
+        <!-- Other form elements (if needed) -->
+      </div>
+      
+    </div>
+    <!-- Column for Images -->
+    <div class="col-md-6">
+      <div class="text-center mb-4">
+        <img src="https://vcdn-kinhdoanh.vnecdn.net/2022/05/17/image001-1652779540-4907-1652779654.png" alt="Bank Image" class="img-fluid mb-3">
+      </div>
+      <div class="text-center">
+        <img src="https://www.landbank.com/images/news_awards/1677026037_Visa-X-Jollibee_Web-Slider.png" alt="Promotion Image" class="img-fluid">
+      </div>
+    </div>
+
+  </div>
+</div>
