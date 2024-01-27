@@ -7,13 +7,25 @@
     <div class="col-md-6">
       <div class="card shadow mb-4">
         <div class="card-body">
-          <h4 class="text-center mb-4">
-            <i class="fas fa-tags"></i> DISCOUNT
-          </h4>
+            <h4 class="text-center mb-4">
+              <i class="fas fa-credit-card"></i> LINK BANK ACCOUNT
+            </h4>
+            <div class="form-group mb-3">
+              <label for="bankSelection" class="form-label">Select Bank:</label>
+              <select class="form-select" id="bankSelection" formControlName="bankSelection">
+                <option value="BIDV">BIDV Bank</option>
+                <option value="VCB">VCB Bank</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <label for="bankAccountNumber" class="form-label">Bank Account Number:</label>
+              <input type="text" class="form-control" id="bankAccountNumber" formControlName="bankAccountNumber">
+            </div>
+          <button (click)="askForOTP()" class="btn btn-primary">Verify OTP</button>
+
   
-          <div *ngIf="userResponse?.google_account_id" class="alert alert-info custom-alert">
-            <span class="brand-name">Jollibee</span> COUPON : {{ getGoogleAccountId() }}
-          </div>
+    <!-- Display Transaction Description -->
+
         </div>
           <!-- Other form elements (if needed) -->
         </div>
@@ -48,6 +60,9 @@
               <button type="submit" class="btn btn-danger">Nạp Tiền</button>
               <button type="button" class="btn btn-success" (click)="subtractFacebookAccountId()">Rút Tiền</button>
             </div>
+            <div *ngIf="transactionDescription" class="alert alert-success mt-3">
+              {{ transactionDescription }}
+               </div>
           </form>
         </div>
       </div>
@@ -61,7 +76,6 @@
           <span class="brand-name">Jollibee</span> COUPON : {{ getGoogleAccountId() }}
         </div>
       </div>
-        <!-- Other form elements (if needed) -->
       </div>
       
     </div>
@@ -76,4 +90,7 @@
     </div>
 
   </div>
+</div>
+<div *ngIf="transactionDescription" class="alert alert-success">
+ Status call API from OpenAPI BIDV: 200 OK ( {{ transactionDescription }} )
 </div>

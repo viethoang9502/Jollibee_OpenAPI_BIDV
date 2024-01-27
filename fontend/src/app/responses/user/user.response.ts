@@ -1,6 +1,8 @@
+import { EwalletDTO } from "src/app/dtos/user/ewallet.dto";
 import { Role } from "src/app/models/role";
 
 export interface UserResponse {
+    token(token: any, updateDTO: EwalletDTO): unknown;
     id: number;
     fullname: string;
     address:string;

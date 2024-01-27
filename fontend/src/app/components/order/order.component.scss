@@ -6,6 +6,16 @@
     text-transform: uppercase;
     font-weight: 900;
 }
+.flex-row {
+    display: flex;
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc ở giữa */
+    justify-content: space-between; /* Căn chỉnh các phần tử để có khoảng cách đều */
+  }
+  
+  .form-control {
+    margin-right: 10px; /* Thêm khoảng cách giữa input và button */
+  }
+  
 .intro-section {
     margin-top: 30px;
     margin-bottom: 30px;

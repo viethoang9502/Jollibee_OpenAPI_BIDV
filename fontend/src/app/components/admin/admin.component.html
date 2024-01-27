@@ -1,49 +1,33 @@
-<div class="container-fluid">
-    <header class="header bg-danger text-white d-flex justify-content-between">
-      <h1 class="header-title">Quản lý</h1>
-      <!-- Logout Button -->
-      <button class="btn btn-danger btn-sm" (click)="logout()">Logout</button>
-    </header>
-    <div class="row">
-      <nav id="sidebar" class="col-md-2 col-lg-2 d-md-block bg-light sidebar">
-        <div class="position-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" 
-                (click)="showAdminComponent('orders')"
-                routerLink="/admin/orders"
-                routerLinkActive="active">
-                <i class="fab fa-first-order icon"></i>Orders
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" 
-                (click)="showAdminComponent('categories')"
-                  routerLink="/admin/categories"
-                  routerLinkActive="active">
-                <i class="fab fa-canadian-maple-leaf icon"></i>Categories
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" 
-                (click)="showAdminComponent('products')"
-                routerLink="/admin/products"
-                routerLinkActive="active">
-                <i class="fab fa-codepen icon"></i>Products
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="col-md-10 col-lg-10 overflow-auto">
-        <!--
-        <ng-container [ngSwitch]="adminComponent">
-          <app-order-admin *ngSwitchCase="'orders'"></app-order-admin>
-          <app-product-admin *ngSwitchCase="'products'"></app-product-admin>
-          <app-category-admin *ngSwitchCase="'categories'"></app-category-admin>                    
-        </ng-container>
-        -->
-        <router-outlet></router-outlet>
+<div class="admin-panel">
+  <aside class="sidebar">
+      <div class="logo-section">
+        <h2>My Admin</h2>
       </div>
-    </div>
-  </div>
+      <nav class="nav-menu">
+          <a class="menu-item" (click)="showAdminComponent('dashboard')" routerLink="/admin/dashboard">
+              <i class="fas fa-home"></i><span>Dashboard</span>
+          </a>
+          <a class="menu-item" (click)="showAdminComponent('orders')" routerLink="/admin/orders">
+              <i class="fas fa-shopping-cart"></i><span>Orders</span>
+          </a>
+          <a class="menu-item" (click)="showAdminComponent('products')" routerLink="/admin/products">
+              <i class="fas fa-boxes"></i><span>Products</span>
+          </a>
+          <a class="menu-item" (click)="showAdminComponent('categories')" routerLink="/admin/categories">
+              <i class="fas fa-tags"></i><span>Categories</span>
+          </a>
+          <a class="menu-item" (click)="logout()">
+            <i class="icon fas fa-sign-out-alt"></i><span class="link-text">Logout</span>
+        </a>
+      </nav>
+  </aside>
+  <main class="main-content">
+      <header class="header">
+        <h1>         WELL COME TO JOLLIBEE HOME</h1>
+        <img src="https://jollibee.com.vn/static/version1704296127/frontend/Jollibee/default/vi_VN/images/logo.png" class="logo">
+      </header>
+      <div class="content">
+          <router-outlet></router-outlet>
+      </div>
+  </main>
+</div>

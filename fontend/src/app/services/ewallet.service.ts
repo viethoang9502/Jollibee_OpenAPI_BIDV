@@ -16,10 +16,9 @@ export class EwalletService {
     return this.http.get<any>(`${this.apiBaseUrl}/ewallet/auth`);
   }
 
-  createEwallet(link: string): Observable<EwalletApiResponse> {
-    return this.http.post<EwalletApiResponse>(`${this.apiBaseUrl}/ewallet`, { link });
+  createEwallet(link: string): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/ewallet`, { link });
   }
-  
 
   createMoney(paymentDTO: PaymentDTO): Observable<any> {
     return this.http.post<any>(`${this.apiBaseUrl}/ewallet/create`, paymentDTO);

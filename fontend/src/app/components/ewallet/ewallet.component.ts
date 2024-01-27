@@ -6,6 +6,8 @@ import { UserService } from '../../services/user.service';
 import { TokenService } from '../../services/token.service';
 import { UserResponse } from 'src/app/responses/user/user.response';
 import { EwalletDTO } from 'src/app/dtos/user/ewallet.dto';
+import Swal from 'sweetalert2';
+import { SharedDataService } from 'src/app/services/share.data.service';
 
 @Component({
   selector: 'app-ewallet',
@@ -16,10 +18,13 @@ export class EwalletComponent implements OnInit {
   userEnteredNumber: number = 0;
   userResponse?: UserResponse | null;
   ewalletForm: FormGroup;
+  
   token:string = '';
+  public transactionDescription: string = '';
 
 
   constructor(
+    private sharedDataService: SharedDataService,
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
@@ -31,6 +36,7 @@ export class EwalletComponent implements OnInit {
       facebookAccountId: ['', Validators.required],
       // Add other form controls similar to your UserProfileComponent
       // For example:
+
       googleAccountId: ['', Validators.required],
       // other form controls...
     });
@@ -46,6 +52,15 @@ export class EwalletComponent implements OnInit {
   }
   getGoogleAccountId(): number | null {
     return this.userResponse?.google_account_id ?? null;
+  }
+  saveFacebookAccountId1(): void {
+    if (this.ewalletForm.valid) {
+      const enteredFacebookAccountId = +this.ewalletForm.get('facebookAccountId')?.value;
+      // ... other logic
+  
+      // Update the shared data service
+      this.sharedDataService.changeFacebookAccountId(enteredFacebookAccountId);
+    }
   }
   saveFacebookAccountId(): void {
   if (this.ewalletForm.valid) {
@@ -79,8 +94,40 @@ export class EwalletComponent implements OnInit {
           alert(error.error.message);
         }
       });
+      this.callCreateEwallet();
   } else {
     // Handle form validation errors
+  }
+}
+
+callCreateEwallet(): void {
+  const link = 'hehe'; // Define your link or get it from a form input
+  this.ewalletService.createConfirm(link).subscribe({
+    next: (response) => {
+      this.transactionDescription = response.AdditionalInfo.detailedError.description;
+      // Here you can handle the display logic or other actions based on the response
+    },
+    error: (error) => {
+      console.error('Error occurred:', error);
+    }
+  });
+}
+askForOTP(): void {
+  const otp = prompt('Please enter your OTP:', '');
+  if (otp === '123456') {
+    Swal.fire({
+      title: 'Success!',
+      text: 'OTP verified successfully',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    });
+  } else {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Invalid OTP',
+      icon: 'error',
+      confirmButtonText: 'Try Again'
+    });
   }
 }
 subtractFacebookAccountId(): void {
@@ -99,7 +146,7 @@ subtractFacebookAccountId(): void {
 
     // Ensure the result is not negative, or handle it according to your needs
     if (newFacebookAccountId < 0) {
-      alert("Resulting Facebook Account ID cannot be negative.");
+      alert("Không đủ tiền.");
       return;
     }
 
@@ -120,7 +167,7 @@ subtractFacebookAccountId(): void {
           // Handle the error scenario, for instance, showing an error message
           alert(error.error.message);
         }
-      });
+      });this.callCreateEwallet();
   } else {
     // Handle form validation errors
   }
