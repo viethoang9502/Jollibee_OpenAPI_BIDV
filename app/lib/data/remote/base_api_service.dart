@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 abstract class BaseApiService {
-  static get baseUrl => "http://192.168.31.103:8099/api/v1";
+  static get baseUrl => "http://10.0.2.2:8088/api/v1";
 
   final Dio dio = Dio();
 

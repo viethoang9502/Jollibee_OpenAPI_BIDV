@@ -334,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             color: AppColors.primaryColor,
             icon: AppAssets.icShop,
-            text: 'CỬA HÀNG',
+            text: 'ATM BIDV',
           ),
         ],
       )

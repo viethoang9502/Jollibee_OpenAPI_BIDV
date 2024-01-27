@@ -29,7 +29,7 @@ class _ShopScreenState extends State<ShopScreen> {
               }),
           centerTitle: true,
           title: const UIText(
-            "CỬA HÀNG",
+            "ATM BIDV",
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
@@ -56,16 +56,17 @@ class _ShopScreenState extends State<ShopScreen> {
             child: Column(
               children: const [
                 UiLocationCard(
-                  title: "Tô Hiệu",
-                  address: "303, 305 Pho To Hieu, Nghia Tân ward \n Cau Giay distric. Hnoi",
+                  title: "ATM 01 Tôn Thất Tùng",
+                  address:
+                      "Số 1, phố Tôn Thất Tùng, \n Phường Trung Tự, Đống Đa",
                   phone: "(024) 6329-9797",
-                  time: "9:00 AM - 9:00 PM (Thứ 2 - Chủ Nhật)",
+                  time: "0:00 AM - 12:00 PM (Thứ 2 - Chủ Nhật)",
                 ),
                 UiLocationCard(
-                  title: "Tô Hiệu",
-                  address: "303, 305 Pho To Hieu, Nghia Tân ward \n Cau Giay distric. Hnoi",
-                  phone: "(024) 6329-9797",
-                  time: "9:00 AM - 9:00 PM (Thứ 2 - Chủ Nhật)",
+                  title: "ATM 165 Thái Hà",
+                  address: "Số 165, phố Thái Hà,  \n  Phường Láng Hạ, Đống Đa",
+                  phone: "(024) 6329-9347",
+                  time: "0:00 AM - 12:00 PM (Thứ 2 - Chủ Nhật)",
                 ),
               ],
             ),

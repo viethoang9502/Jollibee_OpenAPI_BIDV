@@ -6,14 +6,32 @@ import 'package:Jollibee/utils/dimens/dimens_manager.dart';
 import 'package:Jollibee/utils/routes/routes.dart';
 import 'package:Jollibee/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
+import 'push_notifications.dart';
+
+import 'firebase_options.dart';
 
 import 'locator.dart';
 
 final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
-
+Future _firebaseBackgroundMessage(RemoteMessage message) async {
+  if (message.notification != null) {
+    print("Some notification Received");
+  }
+}
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialization(null);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+
+  PushNotifications.init();
+  // Listen to background notifications
+  FirebaseMessaging.onBackgroundMessage(_firebaseBackgroundMessage);
   HttpOverrides.global = MyHttpOverrides();
   setupLocator();
 

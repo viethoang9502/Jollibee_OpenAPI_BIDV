@@ -40,7 +40,7 @@ class UiProductOrder extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Row(
         children: [
-          Image.network("http://192.168.31.103:8099/api/v1/products/images/$image",
+          Image.network("http://10.0.2.2:8088/api/v1/products/images/$image",
               width: 100,
               fit: BoxFit.cover, errorBuilder: (BuildContext context,
                   Object exception, StackTrace? stackTrace) {
